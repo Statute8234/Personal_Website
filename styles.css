@@ -153,3 +153,43 @@ header {
     background-color: #404040;
     color: white;
 }
+
+.extra {
+    display: flex;
+    padding-top: 100px;
+    justify-content: right;
+    padding-right: 30px;
+    gap: 20px;
+}
+
+.extra-button {
+    background-color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.extra-button i {
+    margin-right: 10px;
+    color: #C0C0C0;
+    font-size: 24px;
+}
+
+.extra-button span {
+    color: #333;
+    font-weight: 600;
+}
+
+.extra-button:hover {
+    transform: scale(1.05);
+    background-color: #C0C0C0;
+}
+
+.extra-button:hover span, .extra-button:hover i {
+    color: white;
+}

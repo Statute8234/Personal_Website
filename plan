@@ -1,18 +1,10 @@
 # Login page
 _X_ Fix the UI
-1) Make a forgot passowrd screen:
-    - Username
-    - Email
-2) Make a sign up screen:
-    - Username
-    - Email
-    - Password
+_X_ Make a forgot passowrd screen:
+_X_ Make a sign up screen:
 # Create page
-1) Fix the exit button
-2) FIx the UI
-    - Move the flag text
-    - Move the visbility text
-    - Only allow to create when the user logs in
+_X_ Fix the exit button
+_X_ FIx the UI
 # Main Display
 * Make the main display eather a 2D martix format or a list of projectsz
 * Each item needs a project name, catigory, discription, and flags. Add some sort of voteing system at the right side. Add price at the bottom right of the item.

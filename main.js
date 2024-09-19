@@ -54,15 +54,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function login_openForm() {
+    const sidePanel = document.querySelector('.side-panel');
+    const toggleButton = document.getElementById('toggleSidePanel');
     document.getElementById("loginForm").style.display = 'block';
-    sidePanel.classList.toggle('open');
-}
-
-function create_openForm() {
-    document.getElementById("createForm").style.display = 'block';
+    sidePanel.classList.remove('open');
+    toggleButton.textContent = '☰';
+    // close other forms
+    document.getElementById("createForm").style.display = 'none';
 }
 
 function login_closeForm() {
+    document.getElementById("loginForm").style.display = 'none';
+}
+
+function create_openForm() {
+    const sidePanel = document.querySelector('.side-panel');
+    const toggleButton = document.getElementById('toggleSidePanel');
+    document.getElementById("createForm").style.display = 'block';
+    sidePanel.classList.remove('open');
+    toggleButton.textContent = '☰';
+    // close other forms
     document.getElementById("loginForm").style.display = 'none';
 }
 

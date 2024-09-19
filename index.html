@@ -60,27 +60,74 @@
         </aside>
     </div>
 
-    <div class="popup-form-login" id="loginForm">
+    <div id="loginForm" class="popup-form">
         <div class="form-container">
-            <span onclick="login_closeForm()" class="close-btn">&times;</span>
-            <h2>Login</h2>
-            <form action="/submit-login" method="POST">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-
-                <div class="extra-options">
-                    <button class="text-btn" onclick="forgotPassword()">Forgot Password?</button>
-                    <button class="text-btn" onclick="signUp()">Sign Up</button>
+            <span class="close-btn" onclick="closeForm('loginForm')">&times;</span>
+            <h2>Login to RedInfinity Pro</h2>
+            <form id="loginFormContent">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" name="username" required>
                 </div>
-
-                <button type="submit" class="btn">Login</button>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Log In</button>
             </form>
+            <div class="form-footer">
+                <button onclick="showForgotPassword()" class="btn-link">Forgot Password?</button>
+                <button onclick="showSignUp()" class="btn-link">Sign Up</button>
+            </div>
         </div>
     </div>
 
-    
+    <div id="forgotPasswordForm" class="popup-form">
+        <div class="form-container">
+            <span class="close-btn" onclick="closeForm('forgotPasswordForm')">&times;</span>
+            <h2>Reset Password</h2>
+            <form id="forgotPasswordFormContent">
+                <div class="form-group">
+                    <label for="resetEmail">Email Address</label>
+                    <input type="email" id="resetEmail" name="email" required>
+                </div>
+                <button type="submit" class="btn-primary">Send Reset Link</button>
+            </form>
+            <div class="form-footer">
+                <button onclick="showLogin()" class="btn-link">Back to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="signUpForm" class="popup-form">
+        <div class="form-container">
+            <span class="close-btn" onclick="closeForm('signUpForm')">&times;</span>
+            <h2>Create an Account</h2>
+            <form id="signUpFormContent">
+                <div class="form-group">
+                    <label for="signUpUsername">Username</label>
+                    <input type="text" id="signUpUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="signUpEmail">Email Address</label>
+                    <input type="email" id="signUpEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signUpPassword">Password</label>
+                    <input type="password" id="signUpPassword" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signUpConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signUpConfirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign Up</button>
+            </form>
+            <div class="form-footer">
+                <button onclick="showLogin()" class="btn-link">Already have an account? Log in</button>
+            </div>
+        </div>
+    </div>
+
     <div id="createForm" class="popup-form">
         <div class="form-container">
             <span class="close-btn" onclick="closeForm('createForm')">&times;</span>
@@ -113,7 +160,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label><input type="checkbox" name="paymentRequired">Payment Required</label>
+                    <label><input type="checkbox" name="paymentRequired"> Payment Required</label>
                 </div>
                 <div class="form-group">
                     <label for="projectLicense">License</label>

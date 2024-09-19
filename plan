@@ -1,0 +1,33 @@
+# Login page
+1) Make a forgot passowrd screen:
+    - Username
+    - Email
+2) Make a sign up screen:
+    - Username
+    - Email
+    - Password
+# Create page
+1) FIx the UI
+    - Move the flag text
+    - Move the visbility text
+    - Only allow to create when the user logs in
+# Main Display
+* Make the main display eather a 2D martix format or a list of projectsz
+* Each item needs a project name, catigory, discription, and flags. Add some sort of voteing system at the right side. Add price at the bottom right of the item.
+* Make privet posts only visible to the user or their group.
+# Project screen
+* When the project is clicked on: Add the author account at the far right side of the screen. Add Title at the top center of the screen.
+* settings, insite, security, pull requests, issues, progect home page.
+* Add dicription udner the file view. Add flags under the description. 
+* under the disciption add comments and contrubuts list.
+* Add timeline chart to the left side of the screen that can be used to view vertion control of the project. Add multidimentional Timeline chart every new main is a new dimention (defult new project) and allows you to import old files to the new main.
+* Add a list of reomended projetcs to look at on the right side.
+* Add contrubited accounts underthe recomended projects lst. 
+* Add file a list in the center that matches the version thats clicked on.
+# File view
+* File in the center of the screen can be edited by anyone with permision.
+* Add a image editor, video editor and film editor
+# Account view
+* Add an account image at the top of the screen with the username.
+* Add Publicc user details on the left side of the screen.
+* Add projects list in the center.

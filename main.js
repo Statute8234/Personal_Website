@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.getElementById('toggleSidePanel');
 
     const sections = {
-        home: ["Popular", "Best", "Explore"],
+        home: ["Popular", "Best", "Explore","New"],
         pre_production: ["Concept Development", "Budgeting", "Casting", "Location Scouting", "Scheduling", "Storyboarding", "Hiring Crew"],
         production: ["Shooting", "Direction", "Cinematography", "Sound Recording", "Production Design", "Makeup and Hair"],
         post_production: ["Editing", "Sound Design", "Visual Effects (VFX)", "Color Correction", "Music Scoring", "ADR", "Subtitles and Dubbing"],
@@ -36,6 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
             flag_button.innerText = item;
             sidePanel.appendChild(flag_button);
         });
+
+        if (!sidePanel.classList.toggle('open')) {
+            sidePanel.classList.toggle('open');
+            toggleButton.textContent = sidePanel.classList.contains('open') ? '✖' : '☰';
+        }
     }
 
     // Add event listeners to all section buttons

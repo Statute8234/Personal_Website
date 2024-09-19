@@ -21,8 +21,8 @@
     </header>
     
     <section class="extra">
-        <button class="extra-button">Login</button>
-        <button class="extra-button">Create</button>
+        <button class="extra-button" onclick="login_openForm()">Login</button>
+        <button class="extra-button" onclick="create_openForm()">Create</button>
     </section>
 
     <section class="sec">
@@ -57,6 +57,68 @@
         <aside class="side-panel">
             <button class="sort-button" data-flag="all">All</button>
         </aside>
+    </div>
+
+    <div class="popup-form-login" id="loginForm">
+        <div class="form-container">
+            <span onclick="login_closeForm()" class="close-btn">&times;</span>
+            <h2>Login</h2>
+            <form action="/submit-login" method="POST">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <div class="extra-options">
+                    <button class="text-btn" onclick="forgotPassword()">Forgot Password?</button>
+                    <button class="text-btn" onclick="signUp()">Sign Up</button>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup-form-create" id="createForm">
+        <div class="form-container">
+            <span onclick="create_closeForm()" class="close-btn">&times;</span>
+            <h2>Create</h2>
+            <form action="/submit-login" method="POST">
+                <label for="type">Type</label>
+                <select name="type" id="type">
+                    <option value="pre_production">Pre-Production</option>
+                    <option value="production">Production</option>
+                    <option value="post_release">Post Release</option>
+                    <option value="distribution">Distribution</option>
+                    <option value="other">Other</option>
+                </select>
+    
+                <label for="flag">Flag</label>
+                <input type="text" id="flag" name="flag" required>
+    
+                <label for="title">Project Title</label>
+                <input type="text" id="title" name="title" required>
+    
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" required>
+    
+                <hr>
+
+                <label>Visibility</label>
+                <input type="radio" id="public" name="view_type" value="PUBLIC">
+                <label for="public">Public</label>
+                <input type="radio" id="private" name="view_type" value="PRIVATE">
+                <label for="private">Private</label>
+
+                <label for="payment">Payment Required</label>
+                <input type="checkbox" id="payment" name="payment_required" value="PAYMENT">
+                <hr>
+    
+                <label for="license">License</label>
+                <input type="text" id="license" name="license" required>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

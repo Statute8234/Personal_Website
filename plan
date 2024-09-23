@@ -6,8 +6,14 @@ _X_ Make a sign up screen:
 _X_ Fix the exit button
 _X_ FIx the UI
 # SQL database
-# Add an SQL server
+_X_ make php connect to SQL
+_ Make the website add data to the SQL database
 # Main Display
+_ Add user Image somewere on the screen
+_ Add options to the user account
+    _ Allow edit account information
+    _ Allow remove account option
+
 * Make the main display eather a 2D martix format or a list of projectsz
 * Each item needs a project name, catigory, discription, and flags. Add some sort of voteing system at the right side. Add price at the bottom right of the item.
 * Make privet posts only visible to the user or their group.

@@ -49,17 +49,21 @@ document.getElementById('signUpFormContent').addEventListener('submit', function
                 password: password
             })
         })
-        .then(response => response.json())
+        .then(response => {
+            console.log('Response status:', response.status);
+            return response.json();
+        })
         .then(data => {
+            console.log('Response data:', data);
             if (data.success) {
                 alert('User registered successfully with ID: ' + data.userId);
-                closeForm('signUpForm'); // Close the form after successful registration
+                closeForm('signUpForm');
             } else {
                 alert('Error: ' + data.message);
             }
         })
         .catch(error => {
-            console.error('Error:', error);
+            console.error('Fetch error:', error);
         });
     } else {
         alert('Passwords do not match');

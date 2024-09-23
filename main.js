@@ -1,5 +1,5 @@
 function showForm(formId) {
-    document.getElementById(formId).style.display = 'block'
+    document.getElementById(formId).style.display = 'block';
     const sidePanel = document.querySelector('.side-panel');
     const toggleButton = document.getElementById('toggleSidePanel');
     sidePanel.classList.remove('open');
@@ -7,7 +7,7 @@ function showForm(formId) {
 }
 
 function closeForm(formId) {
-    document.getElementById(formId).style.display = 'none'
+    document.getElementById(formId).style.display = 'none';
 }
 
 function showLogin() {
@@ -28,8 +28,8 @@ function showSignUp() {
 
 document.getElementById('loginFormContent').addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log('Login Attempt')
-})
+    console.log('Login Attempt');
+});
 
 document.getElementById('signUpFormContent').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -68,37 +68,31 @@ document.getElementById('signUpFormContent').addEventListener('submit', function
     } else {
         alert('Passwords do not match');
     }
-})
+});
 
 document.getElementById('forgotPasswordForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log('forgot Attempt')
-})
+    console.log('Forgot Password Attempt');
+});
 
 document.getElementById('createFormContent').addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log('create project form Attempt')
-})
+    console.log('Create Project Form Attempt');
+});
 
 function login_openForm() {
-    showForm('loginForm')
+    showForm('loginForm');
 }
 
 function create_openForm() {
-    showForm('createForm')
+    showForm('createForm');
 }
-
-function closeForm(formId) {
-    document.getElementById(formId).style.display = 'none';
-}
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const sidePanel = document.querySelector('.side-panel');
     const toggleButton = document.getElementById('toggleSidePanel');
 
     const sections = {
-        home: ["Popular", "Best", "Explore"],
         home: ["Popular", "Best", "Explore", "New"],
         pre_production: ["Concept Development", "Budgeting", "Casting", "Location Scouting", "Scheduling", "Storyboarding", "Hiring Crew"],
         production: ["Shooting", "Direction", "Cinematography", "Sound Recording", "Production Design", "Makeup and Hair"],
@@ -116,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
         post_release: document.getElementById('post_release'),
     };
 
-    // Function to clear existing buttons and add new ones
     function updateSidePanel(buttons_list) {
         const buttons = sidePanel.querySelectorAll('button');
         buttons.forEach(button => {
@@ -138,14 +131,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Add event listeners to all section buttons
     Object.keys(sectionButtons).forEach(key => {
         sectionButtons[key].addEventListener('click', () => {
             updateSidePanel(sections[key]);
         });
     });
 
-    // Toggle button for opening/closing the side panel
     toggleButton.addEventListener('click', function () {
         sidePanel.classList.toggle('open');
         toggleButton.textContent = sidePanel.classList.contains('open') ? '✖' : '☰';

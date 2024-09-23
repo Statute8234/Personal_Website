@@ -26,22 +26,22 @@ function showSignUp() {
     closeForm('forgotPasswordForm');
 }
 
-document.getElementById('loginFormContent').addEventListener('submit', function(e) {
+document.getElementById('loginFormContent').addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('Login Attempt')
 })
 
-document.getElementById('signUpFormContent').addEventListener('submit', function(e) {
+document.getElementById('signUpFormContent').addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('Sign up Attempt')
 })
 
-document.getElementById('forgotPasswordForm').addEventListener('submit', function(e) {
+document.getElementById('forgotPasswordForm').addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('forgot Attempt')
 })
 
-document.getElementById('createFormContent').addEventListener('submit', function(e) {
+document.getElementById('createFormContent').addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('create project form Attempt')
 })
@@ -54,18 +54,18 @@ function create_openForm() {
     showForm('createForm')
 }
 
-function mods_openForm() {
-    // open up a mod folder to allow users to modify the website =) 
-    // Happy moding!
+function closeForm(formId) {
+    document.getElementById(formId).style.display = 'none';
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function () {
     const sidePanel = document.querySelector('.side-panel');
     const toggleButton = document.getElementById('toggleSidePanel');
 
     const sections = {
         home: ["Popular", "Best", "Explore"],
-        home: ["Popular", "Best", "Explore","New"],
+        home: ["Popular", "Best", "Explore", "New"],
         pre_production: ["Concept Development", "Budgeting", "Casting", "Location Scouting", "Scheduling", "Storyboarding", "Hiring Crew"],
         production: ["Shooting", "Direction", "Cinematography", "Sound Recording", "Production Design", "Makeup and Hair"],
         post_production: ["Editing", "Sound Design", "Visual Effects (VFX)", "Color Correction", "Music Scoring", "ADR", "Subtitles and Dubbing"],
@@ -112,8 +112,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Toggle button for opening/closing the side panel
-    toggleButton.addEventListener('click', function() {
+    toggleButton.addEventListener('click', function () {
         sidePanel.classList.toggle('open');
         toggleButton.textContent = sidePanel.classList.contains('open') ? '✖' : '☰';
     });
 });
+
+function main_DisplaySetup() {
+    const display_setup = document.getElementById('display');
+    if (display_setup.textContent === '☰') {
+        display_setup.textContent = '+';
+    } else {
+        display_setup.textContent = '☰';
+    }
+}

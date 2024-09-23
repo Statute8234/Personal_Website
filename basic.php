@@ -8,7 +8,7 @@ $encryptionKey = 'your_secret_encryption_key';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
     if (isset($data['username']) && isset($data['email']) && isset($data['password'])) {
-        $newUserId = addUser($data['username'], $data['email'], $data['passsword']);
+        $newUserId = addUser($data['username'], $data['email'], $data['password']);
         if ($newUserId) {
             echo json_encode(['success' => true, 'userId' => $newUserId]);
         } else {

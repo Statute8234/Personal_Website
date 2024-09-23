@@ -33,7 +33,37 @@ document.getElementById('loginFormContent').addEventListener('submit', function 
 
 document.getElementById('signUpFormContent').addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log('Sign up Attempt')
+    const username = document.getElementById("signUpUsername").value;
+    const email = document.getElementById("signUpEmail").value;
+    const password = document.getElementById("signUpPassword").value;
+    const password_confirm = document.getElementById("signUpConfirmPassword").value;
+    if (password === password_confirm) {
+        fetch('basic.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: username,
+                email: email,
+                password: password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('User registered successfully with ID: ' + data.userId);
+                closeForm('signUpForm'); // Close the form after successful registration
+            } else {
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    } else {
+        alert('Passwords do not match');
+    }
 })
 
 document.getElementById('forgotPasswordForm').addEventListener('submit', function (e) {

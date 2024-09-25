@@ -8,7 +8,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Set the database file name and encryption key
-$dbFile = 'website_database.db';
+$dbFile = 'src\website_database.db';
 $encryptionKey = 'your_secret_encryption_key';
 
 // Function to check login credentials

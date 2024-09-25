@@ -4,27 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <link rel="icon" type="image/x-icon" href="assets\images\R-fotor-bg-remover-2024073015737.png">
     <title>RedInfinity_Pro</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="src\styles.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>RedInfinity <span class="pro">Pro</span></h1>
+                <img type="image" src="assets\images\R-fotor-bg-remover-2024073015737.png" alt="RedInfinity Logo">
+                <h1>RedInfinity<span class="pro">Pro</span></h1>
             </div>
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="Search...">
                 <button class="search-button"><i class="fas fa-search"></i></button>
             </div>
+            <div class="user-icon-container">
+                <button id="userIcon" class="userIcon">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </button>
+    
+                <!-- Popup Settings -->
+                <div class="settings-popup" id="settingsPopup">
+                    <div class="settings-option">
+                        <button>Profile</button>
+                    </div>
+                    <div class="settings-option">
+                        <button>Projects</button>
+                    </div>
+                    <div class="settings-option">
+                        <button>Settings</button>
+                    </div>
+                    <div class="settings-option">
+                        <button>Sign out</button>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
-    
+
     <section class="extra">
         <button class="extra-button" onclick="login_openForm()">Login</button>
         <button class="extra-button" onclick="create_openForm()">Create</button>
-        <button class="extra-button" id='display' onclick="main_DisplaySetup()">☰</button>
     </section>
 
     <section class="sec">
@@ -178,6 +200,6 @@
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="src\main.js"></script>
 </body>
 </html>

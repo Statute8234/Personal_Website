@@ -6,9 +6,9 @@
     --bg-color: black;
     --border-color: white;
     --popup-color: #333;
-    --font-family: 'Lexend', 'Roboto', Arial, sans-serif;
+    --font-family: 'Poppins', Arial, sans-serif;
     --font-size: 16px;
-    --title-size: 30px;
+    --title-size: 24px;
     --line-height: 1.6;
     --text-color: white;
 }
@@ -36,10 +36,20 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
 .logo h1 {
     font-size: var(--title-size);
     color: var(--primary-color);
-    pointer-events: none;
 }
 
 .logo .pro {
@@ -48,28 +58,83 @@ body {
 }
 
 .search-container {
-    display: flex;
-    align-items: center;
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 20px;
 }
 
 .search-input {
+    width: calc(100% - 40px);
     padding: 0.5rem 1rem;
-    border: 1px solid var(--boarder-color);
-    border-radius: 4px 0 0 4px;
+    border: 1px sold var(--boarder-color);
+    border-radius: 20px;
     font-size: var(--font-size);
+    background-color: black;
+    color: var(--text-color);
 }
 
 .search-button {
-    background-color: var(--primary-color);
-    color: #fff;
+    background-color: transparent;
+    color: var(--text-color);
     border: none;
-    padding: 0.8rem 1rem;
-    border-radius: 0 4px 4px 0;
+    padding: 0.5rem;
     cursor: pointer;
+    position: relative;
+    right: 40px;
 }
 
 .search-button:hover {
     background-color: darkred;
+}
+
+.user-icon-container {
+    position: relative;
+    display: flex;
+}
+
+.userIcon {
+    background-color: white;
+    border: none;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.settings-popup {
+    display: none;
+    position: relative;
+    right: 0;
+    top: 100%;
+    background-color: #333;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    padding: 10px;
+    width: 150px;
+}
+
+.settings-popup .settings-option {
+    padding: 10px;
+}
+
+.settings-popup .settings-option button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    color: white;
+}
+
+.settings-popup .settings-option button:hover {
+    background-color: silver;
+}
+
+.user-icon-container:hover .settings-popup {
+    display: block;
 }
 
 .sec {

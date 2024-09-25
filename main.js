@@ -38,7 +38,7 @@ document.getElementById('loginFormContent').addEventListener('submit', function 
     }
 
     // Send AJAX request to PHP for login check
-    fetch('login.php', {
+    fetch('basic.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ document.getElementById('forgotPasswordForm').addEventListener('submit', functio
     }
 
     // Send a password reset request to PHP
-    fetch('forgot_password.php', {
+    fetch('basic.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

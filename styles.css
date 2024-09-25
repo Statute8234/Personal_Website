@@ -4,12 +4,13 @@
     --primary-color: red;
     --secondary-color: silver;
     --bg-color: black;
-    --boarder-color: white;
+    --border-color: white;
     --popup-color: #333;
     --font-family: 'Lexend', 'Roboto', Arial, sans-serif;
     --font-size: 16px;
     --title-size: 30px;
     --line-height: 1.6;
+    --text-color: white;
 }
 
 * {

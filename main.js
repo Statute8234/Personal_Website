@@ -29,6 +29,35 @@ function showSignUp() {
 document.getElementById('loginFormContent').addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('Login Attempt');
+    const username = document.getElementById('loginUsername').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
+
+    if (username === '' || password === '') {
+        alert('Please enter both username and password.');
+        return;
+    }
+
+    // Send AJAX request to PHP for login check
+    fetch('login.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Login successful!');
+            // Redirect or handle successful login
+        } else {
+            alert(data.message || 'Login failed. Please check your username and password.');
+        }
+    })
+    .catch(error => console.error('Error:', error));
 });
 
 document.getElementById('signUpFormContent').addEventListener('submit', function (e) {
@@ -72,7 +101,28 @@ document.getElementById('signUpFormContent').addEventListener('submit', function
 
 document.getElementById('forgotPasswordForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log('Forgot Password Attempt');
+    const email = document.getElementById('resetEmail').value.trim();
+
+    if (email === '') {
+        alert('Please enter your email address.');
+        return;
+    }
+
+    // Send a password reset request to PHP
+    fetch('forgot_password.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            email: email
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message || 'An error occurred. Please try again later.');
+    })
+    .catch(error => console.error('Error:', error));
 });
 
 document.getElementById('createFormContent').addEventListener('submit', function (e) {
